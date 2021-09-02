@@ -1,0 +1,150 @@
+﻿@page "/books"
+
+<h3>Бібліографічне оформлення книг</h3>
+
+<form>
+    <div class="row">
+        <div class="form-group col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <label for="bookType">Виберіть необхідний тип книги</label>
+            <select id="bookType" class="form-control" @onchange=@ChangeType>
+                <option selected value=1>Книга з одним автором</option>
+                <option value=2>Книга з двома авторами</option>
+                <option value=3>Книга з трьома авторами</option>
+                <option value=4>Книга з чотирма і більше авторами</option>
+                <option value=5>Книга з автором та редактором</option>
+                <option value=6>Книга без автора</option>
+                <option value=7>Багатотомне видання</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+@if (isOne)
+{
+    <Bibliograph.Shared.Book.BookOneAuthor></Bibliograph.Shared.Book.BookOneAuthor>
+}
+
+@if (isTwo)
+{
+    <Bibliograph.Shared.Book.BookTwoAuthors></Bibliograph.Shared.Book.BookTwoAuthors>
+}
+
+@if (isThree)
+{
+    <Bibliograph.Shared.Book.BookThreeAuthors></Bibliograph.Shared.Book.BookThreeAuthors>
+}
+
+@if (isFour)
+{
+    <Bibliograph.Shared.Book.BookFourAuthors></Bibliograph.Shared.Book.BookFourAuthors>
+}
+
+@if (isEditor)
+{
+    <Bibliograph.Shared.Book.BookEditor></Bibliograph.Shared.Book.BookEditor>
+}
+
+@if (isNoOne)
+{
+    <Bibliograph.Shared.Book.BookNoOne></Bibliograph.Shared.Book.BookNoOne>
+}
+
+@if (isBooks)
+{
+    <Bibliograph.Shared.Book.BookBooks></Bibliograph.Shared.Book.BookBooks>
+}
+
+@code {
+    bool isOne { get; set; } = true;
+    bool isTwo { get; set; } = false;
+    bool isThree { get; set; } = false;
+    bool isFour { get; set; } = false;
+    bool isEditor { get; set; } = false;
+    bool isNoOne { get; set; } = false;
+    bool isBooks { get; set; } = false;
+
+    void ChangeType(ChangeEventArgs e)
+    {
+        switch (e.Value.ToString())
+        {
+            case "1":
+                {
+                    isOne = true;
+                    isTwo = false;
+                    isThree = false;
+                    isFour = false;
+                    isEditor = false;
+                    isNoOne = false;
+                    isBooks = false;
+                    break;
+                }
+            case "2":
+                {
+                    isOne = false;
+                    isTwo = true;
+                    isThree = false;
+                    isFour = false;
+                    isEditor = false;
+                    isNoOne = false;
+                    isBooks = false;
+                    break;
+                }
+            case "3":
+                {
+                    isOne = false;
+                    isTwo = false;
+                    isThree = true;
+                    isFour = false;
+                    isEditor = false;
+                    isNoOne = false;
+                    isBooks = false;
+                    break;
+                }
+            case "4":
+                {
+                    isOne = false;
+                    isTwo = false;
+                    isThree = false;
+                    isFour = true;
+                    isEditor = false;
+                    isNoOne = false;
+                    isBooks = false;
+                    break;
+                }
+            case "5":
+                {
+                    isOne = false;
+                    isTwo = false;
+                    isThree = false;
+                    isFour = false;
+                    isEditor = true;
+                    isNoOne = false;
+                    isBooks = false;
+                    break;
+                }
+            case "6":
+                {
+                    isOne = false;
+                    isTwo = false;
+                    isThree = false;
+                    isFour = false;
+                    isEditor = false;
+                    isNoOne = true;
+                    isBooks = false;
+                    break;
+                }
+            case "7":
+                {
+                    isOne = false;
+                    isTwo = false;
+                    isThree = false;
+                    isFour = false;
+                    isEditor = false;
+                    isNoOne = false;
+                    isBooks = true;
+                    break;
+                }
+        }
+
+    }
+}

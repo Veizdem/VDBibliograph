@@ -1,0 +1,141 @@
+﻿<p class="alert alert-warning">Вибачте, цей компонент ще знаходиться на етапі розробки.</p>
+<p class="alert alert-info">Поля позначені зірочкою (*) обов'язкові для заповнення.</p>
+
+@if (resultString != null && resultString != "")
+{
+    <p class="alert alert-success">@resultString</p>
+}
+
+<form class="was-validated" method="post">
+    <div class="form-group row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input @bind="@name1" type="text" class="form-control" placeholder="Прізвище1 *" required>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Ім'я1 *" required>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="По-батькові1 *" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input @bind="@name2" type="text" class="form-control" placeholder="Прізвище2 *" required>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Ім'я2 *" required>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="По-батькові2 *" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Основна назва *" required>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Паралельна назва">
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Підназва">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Організація">
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Редактор">
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Упорядник">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Видання">
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Місто видання *" required>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Видавництво *" required>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Рік видання *" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Інформація про специфіку">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Кількість сторінок *" required>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Кількість ілюстрацій">
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Розмір">
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Супроводжувальний матеріал">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl col-lg col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Назва серії">
+        </div>
+        <div class="col-xl col-lg col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Номер випуску">
+        </div>
+        <div class="col-xl col-lg col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Номер тому">
+        </div>
+        <div class="col-xl col-lg col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Всього томів">
+        </div>
+        <div class="col-xl col-lg col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="ISSN">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Примітки">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Ціна">
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="Тираж">
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+            <input type="text" class="form-control" placeholder="ISBN">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-center">
+            <button type="button" class="btn btn-success btn-block" @onclick="@SubmitClick">Сформувати опис</button>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-center">
+            <button type="reset" class="btn btn-danger btn-block">Очистити форму</button>
+        </div>
+    </div>
+</form>
+
+@code {
+    private string resultString { get; set; }
+
+    private string name1 { get; set; }
+    private string name2 { get; set; }
+
+
+    private void SubmitClick()
+    {
+
+    }
+}
